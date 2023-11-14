@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+ 
+{% block title %}LLama2 Demo{% endblock %}
+ 
+{% block content %}
+            <h1>Talking with the spitting Llama</h1>
+            <p>Feel free to start a conversation:</p>
+            <div class="chat-container">
+                <div class="chat-box" id="chat-box"></div>
+                <textarea class="form-control user-input" id="user-input" placeholder="Type a message..." onkeyup="if(event.keyCode===13 && !event.shiftKey) sendMessage()"></textarea>
+            </div>
+{% endblock %}
+
