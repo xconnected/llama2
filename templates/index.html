@@ -3,11 +3,25 @@
 {% block title %}LLama2 Demo{% endblock %}
  
 {% block content %}
-            <h1>Talking with the spitting Llama</h1>
-            <p>Feel free to start a conversation:</p>
+
+            <h1>Welcome to Llama2</h1>
+
+            <p>Formulate the system prompt:</p>
+            <textarea
+                    class="form-control user-input" 
+                    id="system-prompt-input" 
+                    placeholder="Formulate how the system shall response..." 
+                    onkeyup="if(event.keyCode===13 && !event.shiftKey) send_System_Message()">{{ system_prompt }}</textarea>
+            <br/>
+            <p>Conversation:</p>
             <div class="chat-container">
                 <div class="chat-box" id="chat-box"></div>
-                <textarea class="form-control user-input" id="user-input" placeholder="Type a message..." onkeyup="if(event.keyCode===13 && !event.shiftKey) sendMessage()"></textarea>
+                <textarea 
+                    class="form-control user-input" 
+                    id="user-input"
+                    placeholder="Type a message..."
+                    onkeyup="if(event.keyCode===13 && !event.shiftKey) send_User_Message()"></textarea>
             </div>
+
 {% endblock %}
 

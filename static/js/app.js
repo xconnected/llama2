@@ -1,4 +1,30 @@
- function sendMessage() {
+function send_System_Message() {
+	var systemInput = document.getElementById("system-input");
+	var message = systemInput.value.trim();
+	if (message === "") return;
+
+	// Clear the input field after sending the message
+	document.getElementById("system-input").value = "";
+
+	fetch("system_prompt", {
+	    method: "POST",
+	    headers: {
+		"Content-Type": "application/json",
+	    },
+	    body: JSON.stringify({ message: message }),
+	})
+	    .then((response) => response.json())
+	    .then((data) => {
+		systemInput.value = data.message; 
+	    })
+	    .catch((error) => {
+		console.error("Error:", error);
+		// Handle errors or display a failure message in the chat interface
+	    });
+}
+
+
+function send_User_Message() {
 	var userInput = document.getElementById("user-input");
 	var message = userInput.value.trim();
 	if (message === "") return;
@@ -13,7 +39,7 @@
 
 	chatBox.scrollTop = chatBox.scrollHeight;
 
-	fetch("chat", {
+	fetch("interaction", {
 	    method: "POST",
 	    headers: {
 		"Content-Type": "application/json",
