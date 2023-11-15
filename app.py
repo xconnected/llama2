@@ -8,12 +8,17 @@ load_dotenv()
 
 app_host = os.environ.get('HOST')
 app_port = os.environ.get('PORT')
-app_model = os.environ.get('MODEL')
+llm_model = os.environ.get('LLM_MODEL')
+llm_context_size = int(os.environ.get('LLM_CONTEXT_SIZE'))
+llm_max_tokens = int(os.environ.get('LLM_MAX_TOKENS'))
+llm_system_message = os.environ.get('LLM_SYSTEM_MESSAGE')
 
+if llm_context_size == 0:
+    llm_context_size = 2048
 
-context_size = 2048
-max_tokens = 100
-system_message = """You are a helpful assistant"""
+if llm_system_message == '':
+    system_message = "You are a helpful assistant"
+
 prompt_template = """
 <s>[INST] <<SYS>> {system_message} <</SYS>>
 {user_message}
@@ -23,13 +28,13 @@ app = Flask(__name__)
 
 conversation = []
 
-LLM = Llama(model_path=app_model, n_ctx=context_size)
+LLM = Llama(model_path=llm_model, n_ctx=llm_context_size)
 
 
 def run_llama(user_message):
-    input_message = prompt_template.format(system_message=system_message,
+    input_message = prompt_template.format(system_message=llm_system_message,
                                            user_message=user_message)
-    return LLM(input_message, max_tokens=max_tokens)
+    return LLM(input_message, max_tokens=llm_max_tokens)
 
 
 @app.route('/')
