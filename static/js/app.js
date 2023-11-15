@@ -1,12 +1,12 @@
-function send_System_Message() {
-	var systemInput = document.getElementById("system-input");
-	var message = systemInput.value.trim();
+function send_System_Config(topic) {
+	var input_field = document.getElementById(topic);
+	var message = input_field.value.trim();
 	if (message === "") return;
 
 	// Clear the input field after sending the message
-	document.getElementById("system-input").value = "";
+	document.getElementById(topic).value = "";
 
-	fetch("system_prompt", {
+	fetch(topic, {
 	    method: "POST",
 	    headers: {
 		"Content-Type": "application/json",
@@ -15,7 +15,7 @@ function send_System_Message() {
 	})
 	    .then((response) => response.json())
 	    .then((data) => {
-		systemInput.value = data.message; 
+		input_field.value = data.message; 
 	    })
 	    .catch((error) => {
 		console.error("Error:", error);

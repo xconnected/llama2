@@ -1,27 +1,48 @@
 {% extends "layout.html" %}
  
-{% block title %}LLama2 Demo{% endblock %}
+{% block title %}LLama2{% endblock %}
  
 {% block content %}
 
-            <h1>Welcome to Llama2</h1>
-
-            <p>Formulate the system prompt:</p>
-            <textarea
-                    class="form-control user-input" 
-                    id="system-prompt-input" 
-                    placeholder="Formulate how the system shall response..." 
-                    onkeyup="if(event.keyCode===13 && !event.shiftKey) send_System_Message()">{{ system_prompt }}</textarea>
-            <br/>
-            <p>Conversation:</p>
-            <div class="chat-container">
-                <div class="chat-box" id="chat-box"></div>
-                <textarea 
-                    class="form-control user-input" 
-                    id="user-input"
-                    placeholder="Type a message..."
-                    onkeyup="if(event.keyCode===13 && !event.shiftKey) send_User_Message()"></textarea>
-            </div>
+<div class="container">
+  <h1>Welcome to Llama2</h1>
+  <hr/>
+  <div class="row">
+    <div class="col-4">
+      	<p>Formulate the system prompt:</p>
+	<textarea
+	    class="form-control system-input" 
+	    id="system-message" 
+	    placeholder="Formulate how the system prompt..." 
+	    onfocusout="send_System_Config('system-message')">{{ system_message }}</textarea>
+	<br/>
+     	<p>Max. number of tokens to generate:</p>
+	<textarea
+	    class="form-control system-line-input" 
+	    id="nb-tokens" 
+	    placeholder="Number of tokens to process..." 
+	    onfocusout="send_System_Config('nb-tokens')">{{ nb_tokens }}</textarea>
+	<br/>
+     	<p>Context:</p>
+	<textarea
+	    class="form-control context-input" 
+	    id="context" 
+	    placeholder="Enter some context" 
+	    onfocusout="send_System_Config('context')"></textarea>
+    </div>
+    <div class="col-8">
+      	<p>Conversation:</p>
+	<div class="chat-container">
+	<div class="chat-box" id="chat-box"></div>
+		<textarea 
+		    class="form-control user-input" 
+		    id="user-input"
+		    placeholder="Type a message..."
+		    onkeyup="if(event.keyCode===13 && !event.shiftKey) send_User_Message()"></textarea>
+	</div>
+    </div>
+  </div>
+</div>
 
 {% endblock %}
 

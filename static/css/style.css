@@ -3,7 +3,7 @@
         color: #eee;
     }
     .container {
-        max-width: 600px;
+        max-width: 900px;
         margin: 0 auto;
         padding: 20px;
     }
@@ -21,6 +21,32 @@
     .user-input {
         resize: vertical;
         max-height: 200px;
+        vertical-align: top;
+        border: 1px solid #555;
+        border-radius: 3px;
+        background-color: #333;
+        color: #ccc;
+    }
+    .system-input {
+        resize: vertical;
+        height: 120px;
+        max-height: 300px;
+        vertical-align: top;
+        border: 1px solid #555;
+        border-radius: 3px;
+        background-color: #333;
+        color: #ccc;
+    }
+    .system-line-input {
+        height: 20px;
+        vertical-align: top;
+        border: 1px solid #555;
+        border-radius: 3px;
+        background-color: #333;
+        color: #ccc;
+    }
+    .context-input {
+        height: 375px;
         vertical-align: top;
         border: 1px solid #555;
         border-radius: 3px;
