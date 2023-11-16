@@ -49,7 +49,7 @@ function send_User_Message() {
 	    .then((response) => response.json())
 	    .then((data) => {
 		var botResponse = document.createElement("div");
-		botResponse.innerHTML = '<i class="bi bi-cpu"></i> <strong>Llama2:</strong> ' + data.message; 
+		botResponse.innerHTML = '<i class="bi bi-cpu"></i> <strong>Llama2:</strong> ' + data.elapsed + data.message; 
 		chatBox.appendChild(botResponse);
 		chatBox.scrollTop = chatBox.scrollHeight;
 	    })
