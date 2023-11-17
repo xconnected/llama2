@@ -1,0 +1,28 @@
+#basic
+<s>[INST] <<SYS>>
+{system_message}
+<</SYS>>
+
+{user_message}
+[/INST]
+
+#basic_context
+<s>[INST]<<SYS>>
+{system_message}
+Use the following pieces of information to answer the user's question.
+If you don't know the answer, just say that you don't know, don't try to make up an answer.
+<</SYS>>
+{context}
+
+{user_message}
+[/INST]
+
+#memory
+<s>[INST] <<SYS>>
+{system_prompt}
+<</SYS>>
+
+{user_message_1} [/INST] {model_output_1} </s>\
+<s>[INST] {user_message_2} [/INST] {model_output_2} </s>\
+<s>[INST] {user_message_3} [/INST] 
+

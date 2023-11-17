@@ -1,11 +1,14 @@
 import os
 
+
 class Config():
 
     def __init__(self):
         self._app_host = os.environ.get('HOST')
         self._app_port = os.environ.get('PORT')
         self._llm_model = os.environ.get('LLM_MODEL')
+        self._llm_model = os.environ.get('LLM_MODEL')
+        self._llm_prompts = os.environ.get('LLM_PROMPTS')
         self._llm_context_size = int(os.environ.get('LLM_CONTEXT_SIZE'))
         self._llm_max_tokens = int(os.environ.get('LLM_MAX_TOKENS'))
         self._llm_system_message = os.environ.get('LLM_SYSTEM_MESSAGE')
@@ -26,6 +29,14 @@ class Config():
     @app_port.setter
     def app_port(self, value):
         self._app_port = value
+
+    @property
+    def llm_prompts(self):
+        return self._llm_prompts
+
+    @llm_prompts.setter
+    def llm_prompts(self, value):
+        self._llm_prompts = value.strip()
 
     @property
     def llm_model(self):

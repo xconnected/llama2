@@ -1,59 +1,51 @@
 from llama_cpp import Llama
 
-
-template_1 = """
-<s>[INST] <<SYS>>
-{system_message}
-<</SYS>>
-
-{user_message}
-[/INST]"""
-
-template_2 = """
-<s>[INST]<<SYS>>
-{system_message}
-Use the following pieces of information to answer the user's question.
-If you don't know the answer, just say that you don't know, don't try to make up an answer.
-<</SYS>>
-{context}
-
-{user_message}
-[/INST]"""
-
-template_3 = """ 
-<s>[INST] <<SYS>>
-{system_prompt}
-<</SYS>>
-
-{user_message_1} [/INST] {model_output_1} </s>\
-<s>[INST] {user_message_2} [/INST] {model_output_2} </s>\
-<s>[INST] {user_message_3} [/INST] 
-"""
-
 llm = None
+prompt_templates = dict()
 conversation = []
 
-def init_llm(model_path, context_size):
+
+def load_prompt_templates(prompt_file):
+
+    with open(prompt_file, mode="r") as f:
+        content = f.read()
+
+    prompts = content.split('#')
+    prompt_dict = dict()
+
+    for prompt in prompts:
+        prompt_title = prompt.split('\n')[0].strip()
+        if prompt_title != '':
+            prompt_text = '\n'.join(prompt.split('\n')[1:]).strip()
+            prompt_dict[prompt_title] = prompt_text
+
+    return prompt_dict
+
+
+def init_llm(model_path, context_size, prompts_template_file):
+
     global llm
     llm = Llama(model_path=model_path, n_ctx=int(context_size))
+
+    global prompt_templates
+    prompt_templates = load_prompt_templates(prompts_template_file)
 
 
 def run_llm(user_message, system_message, context, max_tokens):
 
-    if  len(context.strip()) > 0:
-        template = template_2
+    if len(context.strip()) > 0:
+        prompt = prompt_templates['basic'].format(
+                    system_message=system_message,
+                    user_message=user_message)
     else:
-        template = template_1
-
-    prompt = template.format(
-        system_message=system_message,
-        context=context,
-        user_message=user_message)
+        prompt = prompt_templates['basic_context'].format(
+                    system_message=system_message,
+                    context=context,
+                    user_message=user_message)
 
     response = llm(prompt, max_tokens=max_tokens)
 
-    conversation.append({'user': user_message, 'assistant': response['choices'][0]['text']})
+    conversation.append({'user': user_message,
+                         'assistant': response['choices'][0]['text']})
 
     return response
-
-
