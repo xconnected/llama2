@@ -51,6 +51,41 @@ Prompts are structured as follows:
 <prompt text>
 ```
 
+The prompt file as delivered contains (only basic and basic_context are used):
+
+```
+#basic
+<s>[INST] <<SYS>>
+{system_message}
+<</SYS>>
+
+{user_message}
+[/INST]
+
+#basic_context
+<s>[INST]<<SYS>>
+{system_message}
+Use the following pieces of information to answer the user's question.
+If you don't know the answer, just say that you don't know, don't try to make up an answer.
+<</SYS>>
+{context}
+
+{user_message}
+[/INST]
+
+#memory
+<s>[INST] <<SYS>>
+{system_prompt}
+<</SYS>>
+
+{user_message_1} [/INST] {model_output_1} </s>\
+<s>[INST] {user_message_2} [/INST] {model_output_2} </s>\
+<s>[INST] {user_message_3} [/INST] 
+```
+
+By default the "basic" prompt is used. 
+If there is any text in the context window, "basic_context" is being used.
+
 In future the GUI will offer to choose from different prompts.
 
 Note:
@@ -75,6 +110,9 @@ When the system is up, it can be accessed woth the browser at the specified host
 
 The entry fields on the right, can be updated at any time. The update is initiated when leaving the text box.
 
+As mentioned above if there is any text in the context window, the prompt will be adjusted.
+However there is currently no check on the context size, so if it is too large the LLM will ignore parts of the prompt.
+
 Inquieries to the LLM can be entered in the text boy below the conversation window and are submitted with the return key.
 
 The inquiery is displayed together with the response in the conversation as shown below. 
@@ -84,4 +122,6 @@ Next to Llama2: in brackets it is shown how many seconds it took to create the r
 
 Well isn't this response impressive :D
 
-Note: The shown result is on a machine without GPU support.
+Note: 
+The result shown was produced only with CPU and no GPU support.
+The language model used is: ```llama-2-7b-chat.Q5_K_S.gguf``` which is only 4.7GB in size
