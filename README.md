@@ -82,4 +82,6 @@ Next to Llama2: in brackets it is shown how many seconds it took to create the r
 
 ![image](https://github.com/xconnected/llama2/assets/4428021/d9410593-ad08-4680-8c1a-1a274f1247c4)
 
+Well isn't this response impressive :D
+
 Note: The shown result is on a machine without GPU support.
