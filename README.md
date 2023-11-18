@@ -19,7 +19,7 @@ The Llama2 model can be downloaded from HuggingFace (requires a registration)
 - There is no indication if the model is busy - consult the console or the log files
 - This example is the outcome of a few hours work. Most time was spend on the boilerplate (GUI etc.)
 - The library **llama-cpp-python** perform the work, visit the author here: https://github.com/abetlen/llama-cpp-python
-- There are security measures built in, so it is strongly recommended to not use this code in public!
+- There are no security measures built into the code, it is strongly recommended not make a running instance publicly available!
 
 ## Installation
 
