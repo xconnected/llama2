@@ -133,7 +133,9 @@ The fields have following function:
 ## Example
 ![image](https://github.com/xconnected/llama2/assets/4428021/e0015f65-a253-4a4e-b722-094024a94abf)
 
-Well isn't this response impressive :D
+![image](https://github.com/xconnected/llama2/assets/4428021/edbacc77-9e81-479b-ab28-1dca9640ec1b)
+
+Well arent these responses impressive :D
 
 **Note:** 
 
