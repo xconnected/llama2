@@ -16,20 +16,20 @@ The Llama2 model can be downloaded from HuggingFace (requires a registration at 
 
 ## Installation
 
-Clone the repo 
+### Clone the repo 
 ```git clone <url>```
 
 Enter the cloned folder and setup a virtual python environment 
 ```python -m venv .venv```
 
-Install required libraries
+### Install required libraries
 ```pip install -r requirements.txt```
 
-Download the LLM
+### Download the LLM
 Place the the llm into the cloned folder under ./data
 if you decide to use a different folder, you need to update the ```.env``` file.
 
-Customize the .env file 
+### Customize the .env file 
 The .env file can be adjusted to the actual needs. Except of the chosen language model, the default should work out-of-the-box
 ```
 HOST=localhost --> preferred host name for the GUI
@@ -41,7 +41,7 @@ LLM_MAX_TOKENS=200 --> max tokens to produce, can be adjusted on the gui
 LLM_SYSTEM_MESSAGE=You are a helpful assistant --> default system message can be adjusted on the gui
 ```
 
-Customize the prompts.txt file 
+### Customize the prompts.txt file (if desired)
 The prompts file contains the default prompts (basic, basic_context) as used by the example app
 They can be adjusted as desired and follow the standard prompting practice for LLama.
 Prompts are structured as follows:
@@ -88,10 +88,9 @@ If there is any text in the context window, "basic_context" is being used.
 
 In future the GUI will offer to choose from different prompts.
 
-Note:
-I observed different behaviour on different systems, based on the prompt formatting.
+**Note:** I observed different behaviour on different systems, based on the prompt formatting.
 If the system behaves strane try to remove line breaks or spaces from the prompt.
-Note:
+
 
 ## Usage
 
@@ -122,8 +121,7 @@ Next to Llama2: in brackets it is shown how many seconds it took to create the r
 
 Well isn't this response impressive :D
 
-Note: 
+**Note:** 
 
-The result shown was produced only with CPU and no GPU support.
-
-The language model used is: ```llama-2-7b-chat.Q5_K_S.gguf``` which is only 4.7GB in size
+- The result shown was produced only with CPU and no GPU support.
+- The language model used is: ```llama-2-7b-chat.Q5_K_S.gguf``` which is only 4.7GB in size
