@@ -1,18 +1,19 @@
 # llama2
 
-This repo contains a personal attempt to use the LLama2 model with a simple GUI.
-The GUI is not fool proof but shall make it easier to play around with the language model.
-The implementation is based on python, but for execution a c++ compiler e.g. gcc or similar must be available.
-On Linux systems this is normally out of the box, on Windows systems the free visual studio distribution should be sufficient.
+This repo contains a personal attempt to use the LLama2 model locally (no cloud) with a simple GUI.
+The GUI is not fool proof and is was made just to play around with the language model.
 
-This example is not optimized and has been tested only with CPU support. 
+The implementation is based on standard python libraries. For the language model a c++ compiler like gcc or similar is required.
+On Linux systems these compilers are normally available out-of-the-box. On Windows systems gcc or the free visual studio must be separately installed.
+
+This example is not optimized and was tested only with CPU support. 
 If an Nvidia GPU is present it should be detected and integrated. 
 If not this can be easily accomplished, as the llama-cpp-python library supports this.
 
-The core of the example is build on llama-cpp-python library and the Llama2 model.
-The Llama2 model can be downloaded from HuggingFace (requires a registration at Meta as well)
+The core of the example is build on **llama-cpp-python** library and the Llama2 model from Meta.
+The Llama2 model can be downloaded from HuggingFace (requires a registration)
 
-**The model must be in the .gguf format.**
+**The model must be in the .gguf format. The older .ggml format won't work**
 
 ## Installation
 
