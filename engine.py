@@ -33,7 +33,7 @@ def init_llm(model_path, context_size, prompts_template_file):
 
 def run_llm(user_message, system_message, context, max_tokens):
 
-    if len(context.strip()) > 0:
+    if len(context.strip()) < 10:
         prompt = prompt_templates['basic'].format(
                     system_message=system_message,
                     user_message=user_message)
@@ -43,7 +43,7 @@ def run_llm(user_message, system_message, context, max_tokens):
                     context=context,
                     user_message=user_message)
 
-    response = llm(prompt, max_tokens=max_tokens)
+    response = llm(prompt, max_tokens = max_tokens)
 
     conversation.append({'user': user_message,
                          'assistant': response['choices'][0]['text']})
