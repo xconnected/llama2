@@ -123,6 +123,7 @@ Next to Llama2: in brackets it is shown how many seconds it took to create the r
 Well isn't this response impressive :D
 
 Note: 
+
 The result shown was produced only with CPU and no GPU support.
 
 The language model used is: ```llama-2-7b-chat.Q5_K_S.gguf``` which is only 4.7GB in size
