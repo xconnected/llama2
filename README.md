@@ -110,22 +110,11 @@ When the system is up, it can be accessed woth the browser at the specified host
 The entry fields on the right, can be updated at any time. The update is initiated when leaving the text box.
 The fields have following function:
 
-**Top-Left Max. number of tokens to generate::**
-System prompt to instruct the system how to behave
-
-**Middle-Left Formulate the system prompt:**
-Number of tokens created as response
-
-**Bottom-Left Context:**
-Context to be used to build the response
-As mentioned above if there is any text in the context window, the prompt will be adjusted.
-However there is currently no check on the context size, so if it is too large the LLM will ignore parts of the prompt.
-
-**Top-Right Conversation:**
-Display the conversation. Next to the label "Llama2:" in brackets, the time it took to build the response is shown.
-
-**Bottom-Right "Entry Field":**
-User inquiery - where the text can be entered and submitted with the enter/retun key
+- **Top-Left Max. number of tokens to generate::** System prompt to instruct the system how to behave
+- **Middle-Left Formulate the system prompt:** Number of tokens created as response
+- **Bottom-Left Context:** Context to be used to build the response. As mentioned above if there is any text in the context window, the prompt will be adjusted. However there is currently no check on the context size, so if it is too large the LLM will ignore parts of the prompt.
+- **Top-Right Conversation:** Display the conversation. Next to the label "Llama2:" in brackets, the time it took to build the response is shown.
+- **Bottom-Right "Entry Field":** User inquiery - where the text can be entered and submitted with the enter/retun key
 
 ## Example
 ![image](https://github.com/xconnected/llama2/assets/4428021/d9410593-ad08-4680-8c1a-1a274f1247c4)
