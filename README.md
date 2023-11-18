@@ -108,15 +108,26 @@ When the system is up, it can be accessed woth the browser at the specified host
 ![image](https://github.com/xconnected/llama2/assets/4428021/309c3b36-ae8a-4a64-ac74-beaaab74f53d)
 
 The entry fields on the right, can be updated at any time. The update is initiated when leaving the text box.
+The fields have following function:
 
+**Top-Left Max. number of tokens to generate::**
+System prompt to instruct the system how to behave
+
+**Middle-Left Formulate the system prompt:**
+Number of tokens created as response
+
+**Bottom-Left Context:**
+Context to be used to build the response
 As mentioned above if there is any text in the context window, the prompt will be adjusted.
 However there is currently no check on the context size, so if it is too large the LLM will ignore parts of the prompt.
 
-Inquieries to the LLM can be entered in the text boy below the conversation window and are submitted with the return key.
+**Top-Right Conversation:**
+Display the conversation. Next to the label "Llama2:" in brackets, the time it took to build the response is shown.
 
-The inquiery is displayed together with the response in the conversation as shown below. 
-Next to Llama2: in brackets it is shown how many seconds it took to create the response.
+**Bottom-Right "Entry Field":**
+User inquiery - where the text can be entered and submitted with the enter/retun key
 
+## Example
 ![image](https://github.com/xconnected/llama2/assets/4428021/d9410593-ad08-4680-8c1a-1a274f1247c4)
 
 Well isn't this response impressive :D
