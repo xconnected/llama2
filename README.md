@@ -140,7 +140,9 @@ Well isn't this response impressive :D
 - The result shown was produced only with CPU and no GPU support.
 - The language model used is: ```llama-2-7b-chat.Q5_K_S.gguf``` which is only 4.7GB in size
 
-# Ideas (implemented if I find the time, use case or demand)
+# Ideas
+Will be implemented if I find the time, use case or demand
+
 - Selection of additional prompts or crafting prompts on the GUI
 - Selection of additional language model versions on the GUI
 - Reinitialization of the LLM to adjust the context size
