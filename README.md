@@ -18,7 +18,7 @@ The Llama2 model can be downloaded from HuggingFace (requires a registration)
 - The GUI is crafted based on Flask (development server) with all the given limitations
 - There is no indication if the model is busy - consult the console or the log files
 - This example is the outcome of a few hours work. Most time was spend on the boilerplate (GUI etc.)
-- The libraries used, especially **llama-cpp-python**, perform the work visit the author here: https://github.com/abetlen/llama-cpp-python
+- The library **llama-cpp-python** perform the work, visit the author here: https://github.com/abetlen/llama-cpp-python
 
 
 ## Installation
