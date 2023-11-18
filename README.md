@@ -15,20 +15,28 @@ The Llama2 model can be downloaded from HuggingFace (requires a registration)
 
 **The model must be in the .gguf format. The older .ggml format won't work**
 
+
 ## Installation
 
 ### Clone the repo 
 ```git clone <url>```
 
+Optional: 
 Enter the cloned folder and setup a virtual python environment 
 ```python -m venv .venv```
+
+Activate the virtual python environment here shown on Linux
+```source .venv/bin/activate```
+
 
 ### Install required libraries
 ```pip install -r requirements.txt```
 
+
 ### Download the LLM
 Place the the llm into the cloned folder under ./data
 if you decide to use a different folder, you need to update the ```.env``` file.
+
 
 ### Customize the .env file 
 The .env file can be adjusted to the actual needs. Except of the chosen language model, the default should work out-of-the-box
@@ -116,6 +124,7 @@ The fields have following function:
 - **Bottom-Left Context:** Context to be used to build the response. As mentioned above if there is any text in the context window, the prompt will be adjusted. However there is currently no check on the context size, so if it is too large the LLM will ignore parts of the prompt.
 - **Top-Right Conversation:** Display the conversation. Next to the label "Llama2:" in brackets, the time it took to build the response is shown.
 - **Bottom-Right "Entry Field":** User inquiery - where the text can be entered and submitted with the enter/retun key
+
 
 ## Example
 ![image](https://github.com/xconnected/llama2/assets/4428021/d9410593-ad08-4680-8c1a-1a274f1247c4)
