@@ -13,10 +13,12 @@ If not this can be easily accomplished, as the llama-cpp-python library supports
 The core of the example is build on **llama-cpp-python** library and the Llama2 model from Meta.
 The Llama2 model can be downloaded from HuggingFace (requires a registration)
 
-Notes:
+## Preliminary Notes
 - The model must be in the .gguf format. The older .ggml format won't work
 - The GUI is crafted based on Flask (development server) with all the given limitations
 - There is no indication if the model is busy - consult the console or the log files
+- This example is the outcome of a few hours work. Most time was spend on the boilerplate (GUI etc.)
+- The libraries used, especially **llama-cpp-python**, perform the work visit the author here: https://github.com/abetlen/llama-cpp-python
 
 
 ## Installation
