@@ -1,7 +1,7 @@
-# llama2
+# llama2 (Easy attempt to use a LLM)
 
-This repo contains a personal attempt to use the LLama2 model locally (no cloud) with a simple GUI.
-The GUI is not fool proof and is was made just to play around with the language model.
+This repo contains a simple attempt to use the LLama2 model solely and fully locallywith a very simple GUI.
+The GUI is not "fool proof" and is was made just to play around with the language model.
 
 The implementation is based on standard python libraries. For the language model a c++ compiler like gcc or similar is required.
 On Linux systems these compilers are normally available out-of-the-box. On Windows systems gcc or the free visual studio must be separately installed.
@@ -13,7 +13,10 @@ If not this can be easily accomplished, as the llama-cpp-python library supports
 The core of the example is build on **llama-cpp-python** library and the Llama2 model from Meta.
 The Llama2 model can be downloaded from HuggingFace (requires a registration)
 
-**The model must be in the .gguf format. The older .ggml format won't work**
+Notes:
+- The model must be in the .gguf format. The older .ggml format won't work
+- The GUI is crafted based on Flask (development server) with all the given limitations
+- There is no indication if the model is busy - consult the console or the log files
 
 
 ## Installation
@@ -36,6 +39,7 @@ Activate the virtual python environment here shown on Linux
 ### Download the LLM
 Place the the llm into the cloned folder under ./data
 if you decide to use a different folder, you need to update the ```.env``` file.
+**The model must be in the .gguf format. The older .ggml format won't work**
 
 
 ### Customize the .env file 
@@ -135,3 +139,10 @@ Well isn't this response impressive :D
 
 - The result shown was produced only with CPU and no GPU support.
 - The language model used is: ```llama-2-7b-chat.Q5_K_S.gguf``` which is only 4.7GB in size
+
+# Ideas (implemented if I find the time, use case or demand)
+- Selection of additional prompts or crafting prompts on the GUI
+- Selection of additional language model versions on the GUI
+- Reinitialization of the LLM to adjust the context size
+- Inclusion of context from pdf-files
+- Inclusion of context from html-files / url
