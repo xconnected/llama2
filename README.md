@@ -1,4 +1,4 @@
-# llama2 (Easy attempt to use a LLM)
+# A simple attempt to use Llama2
 
 This repo contains a simple attempt to use the LLama2 model solely and fully locallywith a very simple GUI.
 The GUI is not "fool proof" and is was made just to play around with the language model.
