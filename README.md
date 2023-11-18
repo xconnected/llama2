@@ -5,12 +5,16 @@ The GUI is not fool proof but shall make it easier to play around with the langu
 The implementation is based on python, but for execution a c++ compiler e.g. gcc or similar must be available.
 On Linux systems this is normally out of the box, on Windows systems the free visual studio distribution should be sufficient.
 
-Rhe core of the example is build on llama-cpp-python library and the Llama2 model.
-The latter one can be downloaded from HuggingFace (requires a registration at Meta as well)
+This example is not optimized and has been tested only with CPU support. 
+If an Nvidia GPU is present it should be detected and integrated. 
+If not this can be easily accomplished, as the llama-cpp-python library supports this.
+
+The core of the example is build on llama-cpp-python library and the Llama2 model.
+The Llama2 model can be downloaded from HuggingFace (requires a registration at Meta as well)
 
 **The model must be in the .gguf format.**
 
-## Recommended Installation Approach
+## Installation
 
 Clone the repo 
 ```git clone <url>```
@@ -53,3 +57,29 @@ Note:
 I observed different behaviour on different systems, based on the prompt formatting.
 If the system behaves strane try to remove line breaks or spaces from the prompt.
 Note:
+
+## Usage
+
+To start the example app enter:
+
+```
+# python app.py
+```
+
+In the console the initialization process and processing information of lama2 is displayed.
+All other output is directed into the file ```llm.log```
+
+When the system is up, it can be accessed woth the browser at the specified host e.g. ```localhost:8081```
+
+![image](https://github.com/xconnected/llama2/assets/4428021/309c3b36-ae8a-4a64-ac74-beaaab74f53d)
+
+The entry fields on the right, can be updated at any time. The update is initiated when leaving the text box.
+
+Inquieries to the LLM can be entered in the text boy below the conversation window and are submitted with the return key.
+
+The inquiery is displayed together with the response in the conversation as shown below. 
+Next to Llama2: in brackets it is shown how many seconds it took to create the response.
+
+![image](https://github.com/xconnected/llama2/assets/4428021/d9410593-ad08-4680-8c1a-1a274f1247c4)
+
+Note: The shown result is on a machine without GPU support.
